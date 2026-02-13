@@ -39,7 +39,7 @@ draw = function() {
 
 //mouseClicked - assign a random integer between -100 and 100
 mouseClicked = function(){
-  theNumber = round(random(-100,100));
+  theNumber = round(random(-10000,10000));
 };
 
 
