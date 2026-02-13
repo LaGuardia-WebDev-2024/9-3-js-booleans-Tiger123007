@@ -3,7 +3,7 @@ setup = function(){
     size(400, 400); 
 };
 
-var theNumber = 100;
+var theNumber = 100; // change this to test (try 1, -12, 0)
 
 //draw Function - will run repeatedly
 draw = function() {
@@ -18,10 +18,26 @@ draw = function() {
   text("It's zero", 10, 190);
 
   noFill();
-  rect(5, 60, 200, 40); 
+  stroke(0);
+  strokeWeight(2);
+
+  // outline for positive numbers only
+  if (theNumber > 0) {
+    rect(5, 60, 200, 40);
+  }
+
+  // outline for negative numbers only
+  if (theNumber < 0) {
+    rect(5, 110, 200, 40);
+  }
+
+  // outline for zero only
+  if (theNumber === 0) {
+    rect(5, 160, 200, 40);
+  }
 };
 
-//draw Function - will run when mouseClicked
+//mouseClicked - assign a random integer between -100 and 100
 mouseClicked = function(){
   theNumber = round(random(-100,100));
 };
